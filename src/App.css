@@ -1,0 +1,87 @@
+/* Centers the single card on the screen */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f0f2f5;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.user-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 800px; /* Limits width so it doesn't stretch too far */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid #e1e4e8;
+}
+
+/* Profile Header */
+.img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 30px auto 15px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.name {
+  text-align: center;
+  font-size: 1.75rem;
+  color: #111827;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+/* Sections Styling */
+h3 {
+  grid-column: 1 / -1; /* Makes headers span across columns */
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+/* Paragraph styling for data points */
+p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #374151;
+  display: flex;
+  flex-direction: column; /* Label on top of value for a clean look */
+}
+
+p strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+/* Use a grid inside the card to organize the data */
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of data */
+  gap: 10px 40px;
+  padding: 0 40px 40px;
+}
+
+/* Handle long technical strings (Login Info) */
+h3:nth-of-type(4) ~ p {
+  grid-column: 1 / -1; /* Login info gets full width */
+  word-break: break-all;
+  font-family: monospace;
+  background: #f8fafc;
+  padding: 5px;
+  border-radius: 4px;
+}
