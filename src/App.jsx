@@ -16,8 +16,8 @@ const App = () => {
         throw new Error("Your responce is not ok.");
       }
       const data = await responce.json();
+      
       setPerson(data.results);
-
       } catch (error) {
         setError(true)
       } finally{
@@ -27,7 +27,12 @@ const App = () => {
 userData()
   }, [])
 
-
+ useEffect(() => {
+    if (person.length > 0) {
+      const user = person[0];
+      document.title = `${user.name.title} ${user.name.first} ${user.name.last}`;
+    }
+  }, [person]);
 
   return (
   <div className="page-wrapper">
